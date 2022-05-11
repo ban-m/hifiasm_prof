@@ -1,0 +1,13 @@
+// Synopsis: cargo run --bin syn_genome -- $OUTDIR $GENOMESIZE $DIVRATE $SEED
+// It would produces several files under ${OUTDIR}.
+use rand::Rng;
+use std::io::prelude::*;
+use std::io::BufWriter;
+
+fn main() -> std::io::Result<()> {
+    let args: Vec<_> = std::env::args().collect();
+    let mut haps = format!("{}/haps.fa", &args[1]);
+    let mut wtr = std::fs::File::create(&haps).map(BufWriter::new)?;
+    let seed: u64 = args[4].parse().unwrap();
+    Ok(())
+}
