@@ -2,12 +2,12 @@
 set -ue
 OUTPUT=${PWD}/data
 GENOMESIZE=5000000
-DIVRATE=0.00002
+DIVRATE=0.0001
 COVERAGE=40
 READLEN=20000
 STDDEV=1000
 RESULT=${PWD}/result
-for i in `seq 0 10`
+for i in `seq 0 0`
 do
     SEED=${RANDOM}
     OUTDIR=${OUTPUT}/${SEED}
